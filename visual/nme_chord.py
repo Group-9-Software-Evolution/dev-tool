@@ -56,9 +56,9 @@ def build_matrix(jsonobject):
                 index_of_second = filenames.index(file_secondnode)
                 matrix[index_of_first][index_of_second] = matrix[index_of_first][index_of_second] + 1
                 matrix[index_of_second][index_of_first] = matrix[index_of_second][index_of_first] + 1
-    return matrix
+    return matrix, filenames
 
-def print_matrix(matrix):
+def print_matrix(matrix, filenames):
     matrix = np.array(matrix)
     nan_matrix = np.where(matrix > 0.1, matrix, np.nan)
 
@@ -76,7 +76,7 @@ def print_matrix(matrix):
                                          subplot=111, interactive=True, node_linewidth=2.0, show=True)
 
     # fname_fig = data_path + '/MEG/sample/plot_inverse_connect.png'
-    # fig.savefig("nme-diagram", facecolor='black')
+    #fig.savefig("nme-diagram", facecolor='black')
 
 
 
@@ -140,5 +140,5 @@ if __name__ == '__main__':
     #    build_tram_network("../data/tramstops.json", "../data/tramlines.txt")
     #else:
     #testmatrix()
-    matrix = build_matrix("../code2flow-master/out.json")
-    print_matrix(matrix)
+    matrix, filenames = build_matrix("../code2flow-master/out.json")
+    print_matrix(matrix, filenames)
