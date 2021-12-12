@@ -114,7 +114,7 @@ def divide_list_by_10(l):
 
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':\caption{Tasks done in sprint 2.} \label{tab:sprint2}
     #if sys.argv[1:] == ['init']:
     #    build_tram_network("../data/tramstops.json", "../data/tramlines.txt")
     #else:
