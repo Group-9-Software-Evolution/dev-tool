@@ -71,37 +71,16 @@ def print_matrix(matrix, filenames):
                                          node_width=None, node_colors=None, facecolor='black',
                                          textcolor='white', node_edgecolor='gray', linewidth=3,
                                          colormap='hot', vmin=0.2, vmax=None, colorbar=True, title=None,
-                                         colorbar_size=0.8, colorbar_pos=(0, 0.3), fontsize_title=15,
-                                         fontsize_names=12, fontsize_colorbar=12, padding=2.5, fig=None,
+                                         colorbar_size=0.8, colorbar_pos=(0.6, 0.5), fontsize_title=22,
+                                         fontsize_names=18, fontsize_colorbar=18, padding=2.5, fig=None,
                                          subplot=111, interactive=True, node_linewidth=2.0, show=True)
 
     # fname_fig = data_path + '/MEG/sample/plot_inverse_connect.png'
-    #fig.savefig("nme-diagram", facecolor='black')
+    fig.savefig("nme-diagram", facecolor='black')
 
 
 
 
-
-
-"""
-matrix = [
-        [0, 5, 6, 4],
-        [5, 0, 5, 4],
-        [6, 5, 0, 4],
-        [4, 4, 4, 0],
-    ]
-    label_names = ["Action", "Adventure", "Comedy", "Drama"]
-matrix = [
-    [0, 5, 6, 4, 7, 4],
-    [5, 0, 5, 4, 6, 5],
-    [6, 5, 0, 4, 5, 5],
-    [4, 4, 4, 0, 5, 5],
-    [7, 6, 5, 5, 0, 4],
-    [4, 5, 5, 5, 4, 0],
-]
-
-names = ["Action", "Adventure", "Comedy", "Drama", "Fantasy", "Thriller"]
-"""
 def testmatrix():
     matrix = [
         [0, 0, 0, 4, 7, 0],
@@ -140,5 +119,5 @@ if __name__ == '__main__':
     #    build_tram_network("../data/tramstops.json", "../data/tramlines.txt")
     #else:
     #testmatrix()
-    matrix, filenames = build_matrix("../code2flow-master/out.json")
+    matrix, filenames = build_matrix("code2flow-master/out.json")
     print_matrix(matrix, filenames)
