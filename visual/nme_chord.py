@@ -58,7 +58,11 @@ def build_matrix(jsonobject):
                 matrix[index_of_second][index_of_first] = matrix[index_of_second][index_of_first] + 1
     return matrix, filenames
 
-def print_matrix(matrix, filenames):
+def print_matrix(matrix, filenames, outputname="nme_output"):
+    if outputname != "nme_output":
+        title = outputname
+    else:
+        title = None
     matrix = np.array(matrix)
     nan_matrix = np.where(matrix > 0.1, matrix, np.nan)
 
@@ -70,13 +74,13 @@ def print_matrix(matrix, filenames):
                                          node_angles=None,
                                          node_width=None, node_colors=None, facecolor='black',
                                          textcolor='white', node_edgecolor='gray', linewidth=3,
-                                         colormap='hot', vmin=0.2, vmax=None, colorbar=True, title="Chilli Garden",
+                                         colormap='hot', vmin=0.2, vmax=None, colorbar=True, title=title,
                                          colorbar_size=0.8, colorbar_pos=(0.6, 0.5), fontsize_title=22,
                                          fontsize_names=18, fontsize_colorbar=18, padding=2.5, fig=None,
                                          subplot=111, interactive=True, node_linewidth=2.0, show=True)
 
-    # fname_fig = data_path + '/MEG/sample/plot_inverse_connect.png'
-    fig.savefig("nme-diagram", facecolor='black')
+    fname_fig = outputname + '.png'
+    fig.savefig(fname_fig, facecolor='black')
 
 
 
@@ -115,9 +119,11 @@ def divide_list_by_10(l):
 
 
 if __name__ == '__main__':
-    #if sys.argv[1:] == ['init']:
-    #    build_tram_network("../data/tramstops.json", "../data/tramlines.txt")
-    #else:
+    import sys
+    if sys.argv[1]:
+        matrix, filenames = build_matrix("out.json")
+        print_matrix(matrix, filenames, sys.argv[1])
+    else:
     #testmatrix()
-    matrix, filenames = build_matrix("out.json")
-    print_matrix(matrix, filenames)
+        matrix, filenames = build_matrix("out.json")
+        print_matrix(matrix, filenames)
