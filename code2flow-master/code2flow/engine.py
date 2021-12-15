@@ -531,7 +531,7 @@ def code2flow(raw_source_paths, output_file, language=None, hide_legend=True,
                 "file to use a supported text extension: %r" % set(TEXT_EXTENSIONS))
         final_img_filename = output_file
         output_file, extension = output_file.rsplit('.', 1)
-        output_file += '.gv'
+        output_file += '.json' # gv
 
     file_groups, all_nodes, edges = map_it(sources, language, no_trimming,
                                            exclude_namespaces, exclude_functions,
