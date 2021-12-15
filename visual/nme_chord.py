@@ -70,7 +70,7 @@ def print_matrix(matrix, filenames):
                                          node_angles=None,
                                          node_width=None, node_colors=None, facecolor='black',
                                          textcolor='white', node_edgecolor='gray', linewidth=3,
-                                         colormap='hot', vmin=0.2, vmax=None, colorbar=True, title=None,
+                                         colormap='hot', vmin=0.2, vmax=None, colorbar=True, title="Chilli Garden",
                                          colorbar_size=0.8, colorbar_pos=(0.6, 0.5), fontsize_title=22,
                                          fontsize_names=18, fontsize_colorbar=18, padding=2.5, fig=None,
                                          subplot=111, interactive=True, node_linewidth=2.0, show=True)
@@ -104,7 +104,7 @@ def testmatrix():
                                          node_angles=node_angles,
                                          node_width=None, node_colors=None, facecolor='gray',
                                          textcolor='black', node_edgecolor='black', linewidth=1.5,
-                                         colormap='hot', vmin=0.2, vmax=None, colorbar=True, title="Test",
+                                         colormap='hot', vmin=0.2, vmax=None, colorbar=True, title="Chilli Garden",
                                          colorbar_size=0.6, colorbar_pos=(-0.3, 0.1), fontsize_title=12,
                                          fontsize_names=8, fontsize_colorbar=8, padding=5.0, fig=None,
                                          subplot=111, interactive=True, node_linewidth=2.0, show=True)
@@ -119,5 +119,5 @@ if __name__ == '__main__':
     #    build_tram_network("../data/tramstops.json", "../data/tramlines.txt")
     #else:
     #testmatrix()
-    matrix, filenames = build_matrix("code2flow-master/out.json")
+    matrix, filenames = build_matrix("out.json")
     print_matrix(matrix, filenames)
