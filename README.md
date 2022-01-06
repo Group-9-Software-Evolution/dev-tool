@@ -2,8 +2,9 @@
 
 This is the dev-tool proposal from group 9 in the Software evolution project course 2021. 
 
-##Prerequisites
+## Prerequisites
 MNE library - https://mne.tools/stable/install/index.html
+
 Graphviz - https://graphviz.org/download/
 
 
