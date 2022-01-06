@@ -8,7 +8,7 @@ MNE library - https://mne.tools/stable/install/index.html
 Graphviz - https://graphviz.org/download/
 
 
-
+## How to use
 Make sure you have the mne library installed for python3 before running the visual part. To install, just run: pip install mne 
 
 In order to try the dev-tool out on a project, do the following steps. 
